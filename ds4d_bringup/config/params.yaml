@@ -20,7 +20,7 @@ ds4_driver:
     # previously sent message. When disabled (zero), only publish Joy messages
     # when changes to axes or buttons is detected.
     # This parameter is only effective when use_standard_msgs is true.
-    autorepeat_rate: 50.0
+    autorepeat_rate: 10.0
 
     # Amount by which the joystick has to move before it is considered to be
     # off-center.
