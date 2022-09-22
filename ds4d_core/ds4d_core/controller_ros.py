@@ -1,3 +1,4 @@
+from cmath import log
 from ds4d_core.controller import Controller
 
 from sensor_msgs.msg import BatteryState
@@ -70,6 +71,7 @@ class ControllerRos(Controller):
             if hasattr(report_msg, attr):
                 val = getattr(report, attr)
                 setattr(report_msg, attr, val)
+
         # Fix (potentially) incorrect data reported from device
         imu_data = Controller.get_imu_data(report)
         report_msg.lin_acc_x = imu_data["lin_acc"]["x"]
@@ -88,6 +90,7 @@ class ControllerRos(Controller):
             imu_msg = self._status_to_imu_(status_msg)
             self.pub_report.publish(report_msg)
             self.pub_battery.publish(battery_msg)
+
             if (
                 self._prev_joy is None
                 or joy_msg.axes != self._prev_joy.axes
@@ -346,9 +349,9 @@ class ControllerRos(Controller):
         msg.header = status.header
         msg.percentage = status.battery_percentage
         msg.voltage = Controller.MAX_VOLTAGE * msg.percentage
-        msg.current = float("NaN")
-        msg.charge = float("NaN")
-        msg.capacity = float("NaN")
+        # msg.current = float("NaN")
+        # msg.charge = float("NaN")
+        # msg.capacity = float("NaN")
         msg.design_capacity = 1.0
         if not status.plug_usb:
             msg.power_supply_status = BatteryState.POWER_SUPPLY_STATUS_NOT_CHARGING
