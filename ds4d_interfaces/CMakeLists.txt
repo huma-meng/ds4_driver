@@ -8,9 +8,9 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(builtin_interfaces REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
-find_package(rosidl_default_generators REQUIRED)
 
 set(dependencies
   builtin_interfaces
