@@ -5,7 +5,7 @@
   <arg name="autorepeat_rate" default="10" />
 
   <node pkg="ds4d_core" exec="ds4_driver_node" name="ds4_driver" output="screen" >
-    <param from="$(find-pkg-share ds4d_bringup)/config/params.yaml" />
+    <param from="$(find-pkg-share ds4d_launch)/config/params.yaml" />
 
     <param name="device_addr" value="$(var addr)" />
     <param name="use_standard_msgs" value="$(var use_standard_msgs)" />

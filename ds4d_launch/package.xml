@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>ds4d_bringup</name>
+  <name>ds4d_launch</name>
   <version>1.0.0</version>
   <description>ROS 2 humble driver for the DualShock 4 controller</description>
   <maintainer email="test@test.org">test</maintainer>
